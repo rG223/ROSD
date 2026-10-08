@@ -1,0 +1,32 @@
+common:
+  basic:
+    dataset: tiny
+    batch_size: 64
+    workers: 8
+    epochs: 100
+
+relabel:
+  basic:
+    model: resnet18
+    fkd_seed: 42
+    input_size: 64
+    min_scale_crops: 0.08
+    max_scale_crops: 1.0
+    mode: fkd_save
+  store_true:
+    - use_fp16
+
+validate:
+  basic:
+    gradient_accumulation_steps: 1
+    temperature: 20
+    learning_rate: 0.2
+    momentum: 0.9
+    weight_decay: 0.0001
+  store_true:
+    - cos
+    - sgd
+  path:
+    val_dir: /data2/home/ypliu/datasets/tiny_clean/tiny-imagenet-200/val
+  aim:
+    tag_name: tiny_1x
