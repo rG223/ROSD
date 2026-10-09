@@ -1,7 +1,7 @@
 # ROSD
 
 This repository contains the training and downstream evaluation entry points
-for ROSD. Experimental outputs and checkpoints are intentionally excluded.
+for ROSD.
 
 ## Installation
 
